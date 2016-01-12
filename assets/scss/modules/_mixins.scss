@@ -1,0 +1,11 @@
+
+// Breakpoints
+
+  // Determine Breakpoint Sizes
+  @mixin respond-to($breakpoint) {
+    @if $breakpoint == "small" {
+      @media (min-width: $small) and (max-width: $medium) {
+        @content;
+      }
+    }
+  }

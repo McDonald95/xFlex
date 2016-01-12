@@ -1,0 +1,46 @@
+
+// Grid Styles
+
+  // Make Our Row Flexy
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+// Container Styles
+
+  // Set Out Containers Width
+  .container {
+    width: $container;
+  }
+
+// Image Styles
+
+  // Make Images Fluid
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+  }
+
+// Flex Item Styles
+
+  // Flex Item Styles
+  [class*="col-"] {
+    padding: 1em;
+    margin: $spacing / 2;
+    color: #FFF;
+    flex: 1 auto;
+  }
+
+  // Start Our Loop For Our Flex Items
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex: 0 0 $row-width / $columns * $i - $spacing;
+      min-width: $row-width / $columns * $i - $spacing;
+      @include respond-to(small) {
+        flex: 0 0 100% - $spacing;
+      }
+    }
+  }
+
